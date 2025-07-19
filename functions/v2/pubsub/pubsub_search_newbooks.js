@@ -47,7 +47,7 @@ const searchNewBooks = onMessagePublished(pubsub.TOPIC_NAME_SEARCH_NEWBOOKS, asy
         if (keywords.length > 0) {
             // 次の検索処理
             logger.log("next SearchNewBooks");
-            pubsub.publishSearchNewBooks(keywords);
+            await pubsub.publishSearchNewBooks(keywords);
         } else {
             // 新刊フラグのクリア(作成日から1日経過)
             const newBookDate = new Date();
